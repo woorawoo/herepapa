@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>여기아빠 · 우상열 — 길을 내는 마케터</title>
+<meta name="description" content="여기아빠(우상열)의 허브. 히말라야 트레킹 7년, 신선식품 이커머스 마케팅 4년을 거쳐 지금은 AI·바이브코딩으로 마케팅과 일상의 새 길을 만듭니다.">
+<meta name="theme-color" content="#123a2c">
+<meta property="og:type" content="website">
+<meta property="og:title" content="여기아빠 · 우상열 — 길을 내는 마케터">
+<meta property="og:description" content="히말라야 트레킹 7년, 신선식품 이커머스 마케팅 4년. 지금은 AI·바이브코딩으로 새 길을 만드는 아빠의 허브.">
+<meta property="og:url" content="https://woorawoo.github.io/herepapa/">
+<meta property="og:locale" content="ko_KR">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23123a2c'/%3E%3Cpath d='M18 44 L32 20 L46 44' fill='none' stroke='%23f3ecdd' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --bg:#f7f2e7;
+    --surface:#fffdf7;
+    --ink:#15231c;
+    --muted:#5f6f65;
+    --forest:#123a2c;
+    --forest-2:#1d5741;
+    --moss:#3c6b53;
+    --sand:#efe1c9;
+    --accent:#b0702c;
+    --line:rgba(18,58,44,.13);
+    --radius:22px;
+    --shadow:0 1px 2px rgba(21,35,28,.04), 0 18px 40px -24px rgba(18,58,44,.45);
+    --max:1060px;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+  body{
+    margin:0;
+    font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+    color:var(--ink);
+    background:
+      radial-gradient(1200px 620px at 78% -10%, #efe6d1 0%, rgba(239,230,209,0) 62%),
+      radial-gradient(900px 520px at 6% 4%, #e8efe4 0%, rgba(232,239,228,0) 58%),
+      var(--bg);
+    background-attachment:fixed;
+    line-height:1.68;
+    letter-spacing:-.01em;
+    -webkit-font-smoothing:antialiased;
+    word-break:keep-all;
+  }
+  a{color:inherit;text-decoration:none}
+  img,svg{display:block;max-width:100%}
+  ::selection{background:var(--sand);color:var(--forest)}
+
+  .wrap{width:100%;max-width:var(--max);margin:0 auto;padding:0 22px}
+
+  /* ---------- top bar ---------- */
+  .topbar{
+    position:sticky;top:0;z-index:40;
+    backdrop-filter:saturate(140%) blur(14px);
+    -webkit-backdrop-filter:saturate(140%) blur(14px);
+    background:rgba(247,242,231,.78);
+    border-bottom:1px solid rgba(18,58,44,.08);
+  }
+  .topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px}
+  .brand-mini{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:-.02em}
+  .brand-mini .mark{
+    width:28px;height:28px;border-radius:9px;background:var(--forest);color:#f4ecdb;
+    display:grid;place-items:center;font-size:12px;font-weight:800;letter-spacing:0
+  }
+  .brand-mini .handle{font-weight:500;color:var(--muted);font-size:13px}
+  .topnav{display:flex;align-items:center;gap:6px}
+  .topnav a{
+    font-size:13.5px;color:var(--forest);font-weight:600;padding:8px 12px;border-radius:999px;
+    transition:background .2s ease
+  }
+  .topnav a:hover{background:rgba(18,58,44,.07)}
+  .topnav a.pill{background:var(--forest);color:#f7f2e7}
+  .topnav a.pill:hover{background:var(--forest-2)}
+  @media (max-width:620px){ .topnav a:not(.pill){display:none} }
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;overflow:hidden;padding:clamp(38px,7vw,84px) 0 clamp(8px,2vw,18px)}
+  .topo{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:.62;
+    -webkit-mask-image:linear-gradient(105deg,rgba(0,0,0,.35) 0%,rgba(0,0,0,.85) 48%,#000 100%);
+    mask-image:linear-gradient(105deg,rgba(0,0,0,.35) 0%,rgba(0,0,0,.85) 48%,#000 100%)}
+  .hero .wrap{position:relative;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.85fr);gap:clamp(28px,4vw,56px);align-items:center}
+  @media (max-width:880px){
+    .hero .wrap{grid-template-columns:1fr;gap:30px}
+  }
+
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:9px;
+    font-size:11.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--moss);margin-bottom:18px
+  }
+  .eyebrow::before{content:"";width:22px;height:1px;background:var(--moss);opacity:.55}
+
+  h1{
+    margin:0;
+    font-size:clamp(46px,10.5vw,86px);
+    line-height:1.02;
+    letter-spacing:-.045em;
+    font-weight:800;
+    color:var(--forest);
+  }
+  .name-row{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+  .name-row .real{
+    font-size:clamp(14px,3.4vw,17px);font-weight:600;color:var(--muted);letter-spacing:0
+  }
+  .tagline{
+    margin:18px 0 0;font-size:clamp(16.5px,4.2vw,21px);font-weight:700;color:var(--forest-2);
+    letter-spacing:-.02em;line-height:1.5
+  }
+  .intro{margin:16px 0 0;max-width:46ch;color:#3d4c44;font-size:clamp(14.5px,3.7vw,16px)}
+  .intro strong{color:var(--forest);font-weight:700}
+
+  .hero-cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:9px;
+    min-height:50px;padding:0 22px;border-radius:999px;font-weight:700;font-size:15px;
+    border:1px solid transparent;cursor:pointer;font-family:inherit;
+    transition:transform .18s ease, box-shadow .22s ease, background .2s ease, border-color .2s ease
+  }
+  .btn svg{width:16px;height:16px}
+  .btn-primary{background:var(--forest);color:#f8f3e8;box-shadow:0 12px 24px -14px rgba(18,58,44,.75)}
+  .btn-primary:hover{background:var(--forest-2);transform:translateY(-1px)}
+  .btn-ghost{background:rgba(255,253,247,.7);color:var(--forest);border-color:rgba(18,58,44,.22)}
+  .btn-ghost:hover{background:#fffdf7;border-color:rgba(18,58,44,.4);transform:translateY(-1px)}
+  .btn:active{transform:translateY(0) scale(.99)}
+  .btn:focus-visible,a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+  /* ---------- trail card ---------- */
+  .trail{
+    position:relative;
+    background:linear-gradient(165deg,#143f2f 0%,#0f3227 62%,#0d2a21 100%);
+    color:#eee6d4;border-radius:28px;padding:26px 24px 22px;
+    box-shadow:0 30px 60px -34px rgba(12,38,29,.85), inset 0 1px 0 rgba(255,255,255,.07);
+    overflow:hidden;
+  }
+  .trail::after{
+    content:"";position:absolute;right:-40px;top:-40px;width:190px;height:190px;border-radius:50%;
+    background:radial-gradient(circle,rgba(239,225,201,.18),rgba(239,225,201,0) 70%);
+  }
+  .trail-head{
+    display:flex;align-items:center;justify-content:space-between;gap:12px;
+    font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(238,230,212,.62);
+    font-weight:700;margin-bottom:20px
+  }
+  .trail-head .weather{letter-spacing:.06em;text-transform:none;font-size:11px;color:rgba(238,230,212,.5)}
+  .stops{list-style:none;margin:0;padding:0;position:relative}
+  .stops li{position:relative;padding:0 0 22px 30px}
+  .stops li:last-child{padding-bottom:2px}
+  .stops li::before{
+    content:"";position:absolute;left:2px;top:7px;width:9px;height:9px;border-radius:50%;
+    border:1.5px solid rgba(239,225,201,.62);background:#0f3227
+  }
+  .stops li:last-child::before{background:var(--sand);border-color:var(--sand);box-shadow:0 0 0 4px rgba(239,225,201,.16)}
+  .stops li:not(:last-child)::after{
+    content:"";position:absolute;left:6px;top:20px;bottom:2px;width:1px;
+    background:linear-gradient(to bottom,rgba(239,225,201,.42),rgba(239,225,201,.14));
+    background-image:repeating-linear-gradient(to bottom,rgba(239,225,201,.42) 0 4px,transparent 4px 9px)
+  }
+  .stops .when{display:block;font-size:11.5px;font-weight:700;letter-spacing:.04em;color:rgba(239,225,201,.66)}
+  .stops .what{display:block;font-size:15px;font-weight:700;margin-top:2px;letter-spacing:-.01em}
+  .stops .where{display:block;font-size:12.5px;color:rgba(238,230,212,.62);margin-top:1px}
+  .trail-foot{
+    margin-top:20px;padding-top:16px;border-top:1px solid rgba(239,225,201,.16);
+    display:flex;align-items:center;justify-content:space-between;gap:10px;
+    font-size:11.5px;color:rgba(238,230,212,.6)
+  }
+  .trail-foot .alt{font-weight:700;color:var(--sand);font-size:15px;letter-spacing:.02em}
+
+  /* ---------- stats ---------- */
+  .stats{padding:clamp(30px,5vw,52px) 0 6px}
+  .stats-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:0;
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    background:rgba(255,253,247,.42);border-radius:4px
+  }
+  .stat{padding:22px 18px;border-right:1px solid var(--line)}
+  .stat:last-child{border-right:0}
+  .stat .num{font-size:clamp(21px,4.6vw,27px);font-weight:800;color:var(--forest);letter-spacing:-.035em;line-height:1.2}
+  .stat .num small{font-size:.58em;font-weight:700;margin-left:1px}
+  .stat .lbl{font-size:12px;color:var(--muted);margin-top:5px;line-height:1.45}
+  @media (max-width:760px){
+    .stats-grid{grid-template-columns:repeat(2,1fr)}
+    .stat:nth-child(2n){border-right:0}
+    .stat:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  }
+
+  /* ---------- sections ---------- */
+  section.block{padding:clamp(44px,7vw,80px) 0 0}
+  .sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:26px}
+  .sec-head h2{
+    margin:0;font-size:clamp(21px,4.8vw,28px);letter-spacing:-.035em;color:var(--forest);
+    line-height:1.3;font-weight:800
+  }
+  .sec-head .kicker{
+    display:block;font-size:10.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--moss);margin-bottom:8px
+  }
+  .sec-head p{margin:6px 0 0;color:var(--muted);font-size:13.5px}
+
+  /* ---------- activity cards ---------- */
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media (max-width:880px){ .cards{grid-template-columns:1fr} }
+  .card{
+    position:relative;display:flex;flex-direction:column;
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    padding:24px 22px 22px;box-shadow:var(--shadow);
+    transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease
+  }
+  .card:hover{transform:translateY(-3px);box-shadow:0 1px 2px rgba(21,35,28,.05),0 26px 48px -28px rgba(18,58,44,.5);border-color:rgba(18,58,44,.22)}
+  .card .ico svg,.link-row .badge svg{width:21px;height:21px;color:var(--forest);opacity:.92}
+  .card .ico{
+    width:42px;height:42px;border-radius:13px;display:grid;place-items:center;font-size:20px;line-height:1;
+    background:linear-gradient(160deg,#f0e7d5,#e6dcc5);border:1px solid rgba(18,58,44,.08);margin-bottom:16px
+  }
+  .card .tag{font-size:10.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--moss)}
+  .card h3{margin:5px 0 8px;font-size:18px;letter-spacing:-.03em;color:var(--forest);line-height:1.35;font-weight:800}
+  .card p{margin:0;font-size:14px;color:#4b5a51;line-height:1.66}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:14px;border-top:1px dashed rgba(18,58,44,.14)}
+  .card p{margin-bottom:16px}
+  .chip{
+    font-size:11.5px;font-weight:600;color:var(--forest-2);
+    background:rgba(18,58,44,.06);border:1px solid rgba(18,58,44,.07);
+    padding:4px 9px;border-radius:999px;line-height:1.4
+  }
+
+  /* ---------- links ---------- */
+  .links{display:grid;grid-template-columns:minmax(0,1fr);gap:10px;max-width:820px}
+  .link-row{
+    display:flex;align-items:center;gap:14px;min-width:0;max-width:100%;
+    background:var(--surface);border:1px solid var(--line);border-radius:18px;
+    padding:15px 16px;box-shadow:0 1px 2px rgba(21,35,28,.03);
+    transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease,background .2s ease;
+    width:100%;text-align:left;font-family:inherit;cursor:pointer;color:inherit
+  }
+  .link-row:hover{transform:translateY(-2px);border-color:rgba(18,58,44,.28);box-shadow:0 16px 30px -22px rgba(18,58,44,.6);background:#fffefa}
+  .link-row .badge{
+    flex:0 0 auto;width:46px;height:46px;border-radius:14px;display:grid;place-items:center;font-size:22px;line-height:1;
+    background:linear-gradient(160deg,#f2e9d8,#e8ddc6);border:1px solid rgba(18,58,44,.08)
+  }
+  .link-row .txt{flex:1 1 auto;min-width:0}
+  .link-row .t{display:block;font-weight:700;font-size:15px;letter-spacing:-.02em;color:var(--forest);line-height:1.4}
+  .link-row .d{display:block;font-size:12.5px;color:var(--muted);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .link-row .go{
+    flex:0 0 auto;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;
+    color:var(--forest);background:rgba(18,58,44,.06);transition:background .2s ease,transform .2s ease
+  }
+  .link-row:hover .go{background:rgba(18,58,44,.12);transform:translateX(2px)}
+  .link-row .go svg{width:14px;height:14px}
+  .links-note{margin:14px 2px 0;font-size:12px;color:var(--muted)}
+
+  /* ---------- quote / closing ---------- */
+  .closing{
+    margin-top:clamp(44px,7vw,76px);
+    background:
+      radial-gradient(600px 240px at 12% 0%, rgba(239,225,201,.16), rgba(239,225,201,0) 70%),
+      linear-gradient(170deg,#123a2c,#0d2b22);
+    color:#efe7d6;border-radius:28px;padding:clamp(28px,5.4vw,46px);
+    position:relative;overflow:hidden;
+  }
+  .closing .kicker{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(239,231,214,.55);font-weight:700}
+  .closing blockquote{margin:12px 0 0;font-size:clamp(19px,4.8vw,27px);font-weight:800;letter-spacing:-.035em;line-height:1.42;max-width:26ch}
+  .closing p{margin:14px 0 0;font-size:13.5px;color:rgba(239,231,214,.72);max-width:46ch}
+  .closing .row{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+  .closing .btn-primary{background:var(--sand);color:#123227;box-shadow:none}
+  .closing .btn-primary:hover{background:#f6e9d2}
+  .closing .btn-ghost{background:transparent;color:#efe7d6;border-color:rgba(239,231,214,.32)}
+  .closing .btn-ghost:hover{background:rgba(239,231,214,.09);border-color:rgba(239,231,214,.5)}
+
+  /* ---------- footer ---------- */
+  footer{padding:34px 0 44px;margin-top:8px}
+  .foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;font-size:12.5px;color:var(--muted)}
+  .foot .l{display:flex;align-items:center;gap:9px}
+  .foot .mark{width:24px;height:24px;border-radius:8px;background:var(--forest);color:#f4ecdb;display:grid;place-items:center;font-size:10px;font-weight:800}
+  .foot a:hover{color:var(--forest);text-decoration:underline;text-underline-offset:3px}
+
+  /* ---------- toast ---------- */
+  .toast{
+    position:fixed;left:50%;bottom:26px;transform:translate(-50%,18px);
+    background:rgba(18,58,44,.97);color:#f6efdf;font-size:13.5px;font-weight:600;
+    padding:12px 18px;border-radius:999px;box-shadow:0 20px 40px -18px rgba(12,38,29,.8);
+    opacity:0;pointer-events:none;transition:opacity .28s ease,transform .28s ease;z-index:80;
+    display:flex;align-items:center;gap:8px;max-width:calc(100% - 32px);text-align:center
+  }
+  .toast.show{opacity:1;transform:translate(-50%,0)}
+  .toast svg{width:15px;height:15px;flex:0 0 auto}
+
+  /* ---------- reveal ---------- */
+  .js .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0ms)}
+  .js .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .js .reveal{opacity:1;transform:none;transition:none}
+    *{transition-duration:.01ms !important;animation-duration:.01ms !important}
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand-mini" href="#top" aria-label="맨 위로">
+      <span class="mark" aria-hidden="true">여</span>
+      <span>여기아빠</span>
+      <span class="handle">@herepapa</span>
+    </a>
+    <nav class="topnav" aria-label="주요 이동">
+      <a href="#활동">활동</a>
+      <a href="#링크">링크</a>
+      <a class="pill" href="mailto:woorawoo@naver.com">협업 문의</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <svg class="topo" viewBox="0 0 1200 640" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+      <g fill="none" stroke="#123a2c" stroke-opacity=".10" stroke-width="1">
+        <path d="M-40 520 C 160 470 240 340 380 330 C 520 320 560 430 700 420 C 840 410 900 300 1060 280 C 1140 270 1180 300 1240 296"/>
+        <path d="M-40 560 C 170 512 250 382 390 372 C 530 362 570 470 710 460 C 850 450 910 342 1070 322 C 1150 312 1190 342 1240 338"/>
+        <path d="M-40 480 C 150 430 230 298 370 288 C 510 278 550 388 690 378 C 830 368 890 258 1050 238 C 1130 228 1170 258 1240 254"/>
+        <path d="M-40 440 C 140 392 220 256 360 246 C 500 236 540 346 680 336 C 820 326 880 216 1040 196 C 1120 186 1170 216 1240 212"/>
+        <path d="M-40 400 C 130 354 210 214 350 204 C 490 194 530 304 670 294 C 810 284 870 174 1030 154 C 1110 144 1160 174 1240 170"/>
+        <path d="M-40 600 C 180 554 260 424 400 414 C 540 404 580 512 720 502 C 860 492 920 384 1080 364 C 1160 354 1200 384 1240 380"/>
+        <path d="M-40 360 C 120 316 200 172 340 162 C 480 152 520 262 660 252 C 800 242 860 132 1020 112 C 1100 102 1150 132 1240 128" stroke-opacity=".06"/>
+      </g>
+      <g fill="#123a2c" fill-opacity=".18">
+        <circle cx="380" cy="330" r="2.5"/>
+        <circle cx="700" cy="420" r="2.5"/>
+        <circle cx="1060" cy="280" r="2.5"/>
+      </g>
+    </svg>
+
+    <div class="wrap">
+      <div class="hero-copy">
+        <span class="eyebrow reveal">Personal Brand Hub</span>
+        <div class="name-row reveal" style="--d:60ms">
+          <h1>여기아빠</h1>
+          <span class="real">우상열 · @herepapa</span>
+        </div>
+        <p class="tagline reveal" style="--d:120ms">길을 내는 마케터 · AI로 일상을 자동화하는 아빠</p>
+        <p class="intro reveal" style="--d:180ms">
+          히말라야 트레킹 <strong>7년</strong>, 신선식품 이커머스 마케팅 총괄 <strong>4년</strong>을 거쳐
+          지금은 AI·바이브코딩으로 마케팅과 일상의 새 길을 만들고 있습니다.
+        </p>
+        <div class="hero-cta reveal" style="--d:240ms">
+          <a class="btn btn-primary" href="https://blog.naver.com/here_papa" target="_blank" rel="noopener">
+            블로그 보러가기
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="mailto:woorawoo@naver.com">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.5 7 8.5 6 8.5-6"/></svg>
+            협업 문의
+          </a>
+        </div>
+      </div>
+
+      <aside class="trail reveal" style="--d:200ms" aria-label="지나온 길">
+        <div class="trail-head">
+          <span>The Route</span>
+          <span class="weather">11년 4개월</span>
+        </div>
+        <ol class="stops">
+          <li>
+            <span class="when">2014 – 2021 · 7년</span>
+            <span class="what">혜초여행개발</span>
+            <span class="where">히말라야·중앙아시아 트레킹 기획·인솔</span>
+          </li>
+          <li>
+            <span class="when">2021 – 2025 · 4년</span>
+            <span class="what">㈜위플</span>
+            <span class="where">신선식품 이커머스 마케팅 총괄</span>
+          </li>
+          <li>
+            <span class="when">지금</span>
+            <span class="what">AI · 바이브코딩</span>
+            <span class="where">비전공자와 함께 만드는 새 길</span>
+          </li>
+        </ol>
+        <div class="trail-foot">
+          <span>최고 등정 고도</span>
+          <span class="alt">6,189 m</span>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ================= STATS ================= -->
+  <section class="stats" aria-label="경력 요약">
+    <div class="wrap">
+      <div class="stats-grid reveal">
+        <div class="stat">
+          <div class="num">11<small>년</small> 4<small>개월</small></div>
+          <div class="lbl">마케터로 걸어온 길</div>
+        </div>
+        <div class="stat">
+          <div class="num">7<small>년</small></div>
+          <div class="lbl">히말라야 트레킹 기획·인솔</div>
+        </div>
+        <div class="stat">
+          <div class="num">30<small>회+</small></div>
+          <div class="lbl">고산 트레킹 단체 인솔</div>
+        </div>
+        <div class="stat">
+          <div class="num">2<small>개</small></div>
+          <div class="lbl">블로그 · AI 모임 운영</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ACTIVITIES ================= -->
+  <section class="block" id="활동">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div>
+          <span class="kicker">What I Do</span>
+          <h2>지금 쓰고 있는 세 가지 도구</h2>
+          <p>기록하고, 가르치고, 전략을 세웁니다.</p>
+        </div>
+      </div>
+
+      <div class="cards">
+        <article class="card reveal">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 20h4L18.5 9.5a2.83 2.83 0 0 0-4-4L4 16v4Z"/><path d="m13.6 6.9 3.5 3.5"/></svg></div>
+          <span class="tag">Blog &amp; Content</span>
+          <h3>블로그 &amp; 콘텐츠<br><span style="font-weight:600;font-size:14.5px;color:var(--moss)">'여기아빠'</span></h3>
+          <p>맛집·생활·배당 투자 실계좌를 기록하는 네이버 블로그 &amp; 클립 크리에이터.</p>
+          <div class="chips">
+            <span class="chip">맛집</span>
+            <span class="chip">생활</span>
+            <span class="chip">배당 실계좌</span>
+            <span class="chip">클립</span>
+          </div>
+        </article>
+
+        <article class="card reveal" style="--d:90ms">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4.6" width="18" height="14.8" rx="3"/><path d="m7.4 10.2 2.8 2.4-2.8 2.4"/><path d="M12.8 15h4.2"/></svg></div>
+          <span class="tag">AI &amp; Vibe Coding</span>
+          <h3>AI 자동화 &amp; 바이브코딩<br><span style="font-weight:600;font-size:14.5px;color:var(--moss)">'비전공자ai'</span></h3>
+          <p>비전공자 대상 피클·클로드 코드 블로그 자동화 모임을 운영하고, 웹·자동화 앱을 직접 제작합니다.</p>
+          <div class="chips">
+            <span class="chip">피클</span>
+            <span class="chip">클로드 코드</span>
+            <span class="chip">블로그 자동화</span>
+            <span class="chip">웹앱 제작</span>
+          </div>
+        </article>
+
+        <article class="card reveal" style="--d:180ms">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.6"/><path d="m15.4 8.6-2.1 5-5 2.1 2.1-5 5-2.1Z"/></svg></div>
+          <span class="tag">Marketing &amp; Branding</span>
+          <h3>마케팅 전략 &amp; 브랜딩</h3>
+          <p>11년 차 마케터. 국민대 경영대학원 디지털마케팅 재학 중이며, 커머스·트레킹 기획을 총괄해 왔습니다.</p>
+          <div class="chips">
+            <span class="chip">퍼포먼스</span>
+            <span class="chip">콘텐츠</span>
+            <span class="chip">브랜딩</span>
+            <span class="chip">조직 설계</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= LINKS ================= -->
+  <section class="block" id="링크">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div>
+          <span class="kicker">Quick Links</span>
+          <h2>바로가기</h2>
+          <p>가장 많이 찾는 곳부터 모았습니다.</p>
+        </div>
+      </div>
+
+      <div class="links">
+        <a class="link-row reveal" href="https://blog.naver.com/here_papa" target="_blank" rel="noopener">
+          <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 20h4L18.5 9.5a2.83 2.83 0 0 0-4-4L4 16v4Z"/><path d="m13.6 6.9 3.5 3.5"/></svg></span>
+          <span class="txt">
+            <span class="t">네이버 블로그 '여기아빠'</span>
+            <span class="d">맛집·생활·배당일지 기록 · blog.naver.com/here_papa</span>
+          </span>
+          <span class="go" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg>
+          </span>
+        </a>
+
+        <a class="link-row reveal" style="--d:70ms" href="https://trail-portfolio-1111-698a.vercel.app/" target="_blank" rel="noopener">
+          <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2.8 19.4h18.4"/><path d="m4.2 16.4 5.2-8.6 3.4 5.6 2.4-3.4 4.6 6.4"/></svg></span>
+          <span class="txt">
+            <span class="t">마케터 포트폴리오</span>
+            <span class="d">11년 4개월의 성과와 지나온 길 · trail-portfolio</span>
+          </span>
+          <span class="go" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg>
+          </span>
+        </a>
+
+        <a class="link-row reveal" style="--d:140ms" href="https://pickle.com/i/HGXCJJPV" target="_blank" rel="noopener">
+          <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M15.2 4.5c2.5-1.1 4.9 1.3 3.8 3.8-.5 1.1-1.2 2.1-2 3.1-2 2.6-4 5.2-6.4 7.4-2 1.8-5.1.6-5.5-2.1-.2-1.5.6-2.9 1.6-4 2.2-2.6 4.6-5.2 7.2-7.2Z"/><path d="M15.4 4.6c.1-1 .7-1.8 1.6-2.2"/><path d="M8.6 11.4c.9.2 1.5.9 1.6 1.8"/><path d="M11.9 8.5c.9.2 1.5.9 1.6 1.8"/></svg></span>
+          <span class="txt">
+            <span class="t">피클(Pickle) AI 비서 시작하기</span>
+            <span class="d">제가 쓰는 AI 비서, 초대 링크로 시작해 보세요</span>
+          </span>
+          <span class="go" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg>
+          </span>
+        </a>
+
+        <button class="link-row reveal" style="--d:210ms" type="button" id="mailBtn" data-email="woorawoo@naver.com" aria-label="협업·자문 문의: 이메일 주소 복사 후 메일 앱 열기">
+          <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m3.6 7.2 8.4 5.9 8.4-5.9"/></svg></span>
+          <span class="txt">
+            <span class="t">협업 · 자문 문의</span>
+            <span class="d">woorawoo@naver.com · 누르면 주소가 복사됩니다</span>
+          </span>
+          <span class="go" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2.5"/><path d="M15 5.5A2.5 2.5 0 0 0 12.5 3H5.5A2.5 2.5 0 0 0 3 5.5v7A2.5 2.5 0 0 0 5.5 15"/></svg>
+          </span>
+        </button>
+      </div>
+      <p class="links-note reveal">광고·협찬, 강의·자문, 채용 제안 모두 위 메일로 연락 주세요.</p>
+    </div>
+  </section>
+
+  <!-- ================= CLOSING ================= -->
+  <div class="wrap">
+    <section class="closing reveal">
+      <span class="kicker">Next Route</span>
+      <blockquote>혼자 빨리보다,<br>함께 오래 오른 높이.</blockquote>
+      <p>히말라야에서 배운 건 결국 사람입니다. 새 길을 열 일이 있다면, 함께 걸어요.</p>
+      <div class="row">
+        <a class="btn btn-primary" href="mailto:woorawoo@naver.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.5 7 8.5 6 8.5-6"/></svg>
+          메일 보내기
+        </a>
+        <a class="btn btn-ghost" href="https://blog.naver.com/here_papa" target="_blank" rel="noopener">블로그에서 만나기</a>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div class="l">
+      <span class="mark" aria-hidden="true">여</span>
+      <span>여기아빠 · 우상열 <span style="opacity:.55">/</span> <a href="mailto:woorawoo@naver.com">woorawoo@naver.com</a></span>
+    </div>
+    <div>© <span id="year">2026</span> herepapa. 이 페이지는 피클(Pickle) AI 비서와 함께 만들었습니다.</div>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12.5 5 5L20 6.5"/></svg>
+  <span id="toastText">복사했어요</span>
+</div>
+
+<script>
+(function () {
+  document.documentElement.classList.add('js');
+
+  /* ---- year ---- */
+  var y = document.getElementById('year');
+  if (y) y.textContent = new Date().getFullYear();
+
+  /* ---- scroll reveal ---- */
+  var items = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+    items.forEach(function (el) { io.observe(el); });
+    /* anything already above the fold shows immediately */
+    window.setTimeout(function () {
+      items.forEach(function (el) {
+        if (el.getBoundingClientRect().top < window.innerHeight * 0.92) el.classList.add('in');
+      });
+    }, 60);
+  } else {
+    items.forEach(function (el) { el.classList.add('in'); });
+  }
+
+  /* ---- toast ---- */
+  var toast = document.getElementById('toast');
+  var toastText = document.getElementById('toastText');
+  var timer = null;
+  function showToast(msg) {
+    if (!toast) return;
+    toastText.textContent = msg;
+    toast.classList.add('show');
+    if (timer) clearTimeout(timer);
+    timer = setTimeout(function () { toast.classList.remove('show'); }, 2600);
+  }
+
+  /* ---- copy email + mailto ---- */
+  function legacyCopy(text) {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.setAttribute('readonly', '');
+    ta.style.position = 'fixed';
+    ta.style.top = '-1000px';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    var ok = false;
+    try { ok = document.execCommand('copy'); } catch (err) { ok = false; }
+    document.body.removeChild(ta);
+    return ok;
+  }
+
+  function copyEmail(email, done) {
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(email).then(function () { done(true); }, function () { done(legacyCopy(email)); });
+    } else {
+      done(legacyCopy(email));
+    }
+  }
+
+  var mailBtn = document.getElementById('mailBtn');
+  if (mailBtn) {
+    mailBtn.addEventListener('click', function () {
+      var email = mailBtn.getAttribute('data-email');
+      copyEmail(email, function (ok) {
+        showToast(ok ? email + ' 복사했어요' : '메일 주소: ' + email);
+      });
+      /* let the toast be seen, then hand off to the mail app */
+      setTimeout(function () {
+        window.location.href = 'mailto:' + email;
+      }, 900);
+    });
+  }
+})();
+</script>
+</body>
+</html>
